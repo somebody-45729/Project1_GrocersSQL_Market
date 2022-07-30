@@ -2,7 +2,7 @@ Project 1 Guidelines.
 
 Project:
 Create a Python application that connects to either a MySQL or MongoDB server,
-and performs CRUD operations on a database. The application should model a store,
+and performs CRUD (CREATE, READ, UPDATE, DELETE) operations on a database. The application should model a store,
 where users can create accounts, purchase products, and look at a history of their
 orders. There should also be an admin feature where the admin should be able to 
 see all orders and users. 
