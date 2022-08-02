@@ -24,5 +24,5 @@ def main():
     
     logging.basicConfig(filename = "grocerLog.log", level = logging.DEBUG, format='%(asctime)s :: %(message)s')
 
-
-    cursor.execute("SELECT * FROM grocermarket")
+    
+    
