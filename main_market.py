@@ -24,5 +24,15 @@ def main():
     
     logging.basicConfig(filename = "grocerLog.log", level = logging.DEBUG, format='%(asctime)s :: %(message)s')
 
-    
-    
+
+    print("*** PRODUCE MARKET ***")
+
+    csvName = "file.csv"
+
+    lst_customers = load_customer_db(cursor)
+
+    logging.info("Loading customer info into lst_cusotmers")
+
+    lst_orders = load_order_db(cursor)
+
+    logging.info("Loading order info into lst_orders")
