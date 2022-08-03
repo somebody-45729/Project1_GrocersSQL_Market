@@ -72,7 +72,7 @@ def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
     totPrice = input("\nEnter customer's first name: ")
     order = input("\nEnter customer's address: ")
     # For TABLE customers
-    sql_customers = "\nINSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
+    sql_customers = "\nINSERT INTO orders (prodcue, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
     val = (pk, lastN, firstN, addres, cty)
 
 
