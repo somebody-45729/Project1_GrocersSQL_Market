@@ -67,13 +67,21 @@ def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
     val = (pk, lastN, firstN, addres, cty)
     
     print("\n****************** For TABLE orders *********************************")
-    prod = input("\nEnter customer passkey: ")
-    lbs = input("\nEnter customer's last name: ")
-    totPrice = input("\nEnter customer's first name: ")
-    order = input("\nEnter customer's address: ")
+    prod = input("\nEnter the produce ordered: ")
+    lbs = input("\nEnter number of lbs ordered: ")
+    totPrice = input("\nEnter total value of transaction: ")
+    order = input("\nEnter the ID of order: ")
     # For TABLE customers
-    sql_customers = "\nINSERT INTO orders (prodcue, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
-    val = (pk, lastN, firstN, addres, cty)
+    sql_customers = "\nINSERT INTO orders (produce, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
+    val = (prod, lbs, totPrice, order)
+
+    print("\n****************** For TABLE orderHistory *********************************")
+    date = input("\nEnter customer passkey: ")
+    orderH = input("\nEnter customer's last name: ")
+    pkH = input("\nEnter customer's first name: ")
+    # For TABLE customers
+    sql_customers = "\nINSERT INTO orders (purchase_date, orderid, passkey) VALUES (%d, %d, %s)"
+    val = (prod, lbs, totPrice, order)
 
 
 
