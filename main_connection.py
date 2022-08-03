@@ -45,17 +45,21 @@ def main():
         
         if (choice == 1):
             create(connection, cur)
+            logging.info("SELECTED CREATE/INSERT OPTION")
         elif (choice == 2):
-            read(connection, cur)
+            read(cur)
+            logging.info("SELECTED READ OPTION")
         elif (choice == 3):
             update(connection, cur)
+            logging.info("SELECTED UPDATE OPTION")
         elif (choice == 4):
             delete(connection, cur)
+            logging.info("SELECTED DELETE OPTION")
         else:
             quit()
 
 
-def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS
+def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS ##########################################################################################################
     print("\n**************************** For TABLE customers *************************") # TABLE 1
     pk = input("\nEnter customer passkey: ")
     lastN = input("\nEnter customer's last name: ")
@@ -92,6 +96,25 @@ def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS
 
     connection.commit()
     
+    logging.info("INSERTED INTO ALL 3 TABLES, NEED A WAY TO FIND SEPEARTION.")
+
+
+
+
+
+def read(cur): # SELECT: Seletct data from tables ##############################################################################################################
+    cur.execute("SELECT * FROM customers")
+    cur.execute("SELECT * FROM orders")
+    cur.execute("SELECT * FROM orderHistory")    
+
+    res = cur.fetchall()
+
+    print("/n   passkey   lastname    firstname   address     city")
+    for x in res:
+        print(str(x[0])+"  "+x[1]+"  "+x[2]+"  "+x[5]+"  "+x[3]+"  "+x[4])
+    print("/n   produce    lbsOrdered   totalPrice     orderid")
+    print("/n   purchase_date    orderid    passkey")
+
 
 # call main
     if __name__ == "__main__":
