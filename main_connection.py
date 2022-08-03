@@ -9,7 +9,7 @@ def main():
     # Actually trying to connect the sql server
 
     try:
-        connection = mysql.connector.connect(user=sc.user, password = sc.password, host = sc.host, database = sc.database)    
+        connection = mysql.connector.connect(user=sc.user, password = sc.password, host = sc.host, port = sc.port, database = sc.database)    
         cursor = connection.cursor()
     
     except mysql.connector.Error as mce:
