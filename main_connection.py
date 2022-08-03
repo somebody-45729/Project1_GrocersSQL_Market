@@ -10,7 +10,7 @@ def main():
 
     try:
         connection = mysql.connector.connect(user=sc.user, password = sc.password, host = sc.host, port = sc.port, database = sc.database)    
-        cursor = connection.cursor()
+        cur = connection.cursor()
     
     except mysql.connector.Error as mce:
         print(mce.msg)
@@ -44,19 +44,19 @@ def main():
             logging.info("User has not entered integer, retrying again . . .")
         
         if (choice == 1):
-            create(connection, cursor)
+            create(connection, cur)
         elif (choice == 2):
-            read(connection, cursor)
+            read(connection, cur)
         elif (choice == 3):
-            update(connection, cursor)
+            update(connection, cur)
         elif (choice == 4):
-            delete(connection, cursor)
+            delete(connection, cur)
         else:
             quit()
 
 
-def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
-    print("\n**************************** For TABLE customers *************************")
+def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS
+    print("\n**************************** For TABLE customers *************************") # TABLE 1
     pk = input("\nEnter customer passkey: ")
     lastN = input("\nEnter customer's last name: ")
     firstN = input("\nEnter customer's first name: ")
@@ -64,28 +64,34 @@ def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
     cty = input("\nEnter customer's city: ")
     # For TABLE customers
     sql_customers = "\nINSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
-    val = (pk, lastN, firstN, addres, cty)
+    val_customers = (pk, lastN, firstN, addres, cty)
     
-    print("\n****************** For TABLE orders *********************************")
+    print("\n****************** For TABLE orders *********************************") # TABLE 2
     prod = input("\nEnter the produce ordered: ")
     lbs = input("\nEnter number of lbs ordered: ")
     totPrice = input("\nEnter total value of transaction: ")
     order = input("\nEnter the ID of order: ")
     # For TABLE customers
-    sql_customers = "\nINSERT INTO orders (produce, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
-    val = (prod, lbs, totPrice, order)
+    sql_orders = "\nINSERT INTO orders (produce, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
+    val_orders = (prod, lbs, totPrice, order)
 
-    print("\n****************** For TABLE orderHistory *********************************")
+    print("\n****************** For TABLE orderHistory *********************************") # TABLE 3
     date = input("\nEnter customer passkey: ")
     orderH = input("\nEnter customer's last name: ")
     pkH = input("\nEnter customer's first name: ")
     # For TABLE customers
-    sql_customers = "\nINSERT INTO orders (purchase_date, orderid, passkey) VALUES (%d, %d, %s)"
-    val = (prod, lbs, totPrice, order)
+    sql_history = "\nINSERT INTO orders (purchase_date, orderid, passkey) VALUES (%d, %d, %s)" # ASK ABOUT THIS SINCE THIS TABLE HAS FOREIGN KEYS
+    val_history = (date, orderH, pkH)
 
+    
+    # EXECUTE THE QURIES
+    cur.execute(sql_customers, val_customers)
+    cur.execute(sql_orders, val_orders)
+    cur.execute(sql_history, val_history)
+    
 
-
-
+    connection.commit()
+    
 
 # call main
     if __name__ == "__main__":
