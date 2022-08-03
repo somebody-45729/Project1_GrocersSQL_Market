@@ -67,7 +67,7 @@ def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS #############
     addres = input("\nEnter customer's address: ")
     cty = input("\nEnter customer's city: ")
     # For TABLE customers
-    sql_customers = "\nINSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
+    sql_customers = "INSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
     val_customers = (pk, lastN, firstN, addres, cty)
     
     print("\n****************** For TABLE orders *********************************") # TABLE 2
@@ -76,7 +76,7 @@ def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS #############
     totPrice = input("\nEnter total value of transaction: ")
     order = input("\nEnter the ID of order: ")
     # For TABLE customers
-    sql_orders = "\nINSERT INTO orders (produce, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
+    sql_orders = "INSERT INTO orders (produce, lbsOrdered, totalPrice, orderid) VALUES (%s, %f, %f, %d)"
     val_orders = (prod, lbs, totPrice, order)
 
     print("\n****************** For TABLE orderHistory *********************************") # TABLE 3
@@ -84,11 +84,11 @@ def create(connection, cur): # TECHNICALLY INSERT BY SQL STANDARDS #############
     orderH = input("\nEnter customer's last name: ")
     pkH = input("\nEnter customer's first name: ")
     # For TABLE customers
-    sql_history = "\nINSERT INTO orders (purchase_date, orderid, passkey) VALUES (%d, %d, %s)" # ASK ABOUT THIS SINCE THIS TABLE HAS FOREIGN KEYS
+    sql_history = "INSERT INTO orders (purchase_date, orderid, passkey) VALUES (%d, %d, %s)" # ASK ABOUT THIS SINCE THIS TABLE HAS FOREIGN KEYS
     val_history = (date, orderH, pkH)
 
     
-    # EXECUTE THE QURIES
+    # EXECUTE THE QUERIES
     cur.execute(sql_customers, val_customers)
     cur.execute(sql_orders, val_orders)
     cur.execute(sql_history, val_history)
@@ -119,9 +119,55 @@ def read(cur): # SELECT: Seletct data from tables ##############################
 
 
 
-def update(connect, cur):
-    
+def update(connection, cur):
+    print("\n**************************** For TABLE customers *************************") # TABLE 1
+    pk = input("\nEnter customer passkey: ")
+    lastN = input("\nEnter customer's last name: ")
+    firstN = input("\nEnter customer's first name: ")
+    addres = input("\nEnter customer's address: ")
+    cty = input("\nEnter customer's city: ")
+    # For TABLE customers
+    sql_customers = "update customers set passkey='"+pk+"', lastName='"+lastN+"', firstName='"+firstN+"', address='"+addres+"', city="+cty
+    cur.execute(sql_customers)
+    connection.commit()
+    logging.info("UPDATED table customers")
 
+    print("\n****************** For TABLE orders *********************************") # TABLE 2
+    prod = input("\nEnter the produce ordered: ")
+    lbs = input("\nEnter number of lbs ordered: ")
+    totPrice = input("\nEnter total value of transaction: ")
+    order = input("\nEnter the ID of order: ")
+    # For TABLE customers
+    sql_orders = "update orders set produce='"+prod+"', lbsOrdered='"+lbs+"', totalPrice='"+totPrice+"', orderid="+order
+    cur.execute(sql_orders)
+    connection.commit()
+    logging.info("UPDATED table customers")
+
+
+    print("\n****************** For TABLE orderHistory *********************************") # TABLE 3
+    dateH = input("\nEnter customer passkey: ")
+    orderH = input("\nEnter customer's last name: ")
+    pkH = input("\nEnter customer's first name: ")
+    # For TABLE customers
+    sql_history = "update orderHistory set purchase_date='"+dateH+"', orderid='"+orderH+"', passkey="+pkH # ASK ABOUT THIS SINCE THIS TABLE HAS FOREIGN KEYS
+    cur.execute(sql_history)
+    connection.commit()
+    logging.info("UPDATED table orderHistory")
+
+
+
+def delete(connection, cur):
+    order = input("Enter the Order ID which you wish to delete.")
+    sql_order = "delete FROM orders where orderid = '"+order+"'"
+    cur.execute(sql_order)
+    connection.commit()
+    logging.info("Deleted an order ID")
+
+    pk = input("Enter the passkey which you wish to delete.")
+    sql_pass = "delete FROM cusotmers where passkey = '"+pk+"'"
+    cur.execute(sql_pass)
+    connection.commit()
+    logging.info("Deleted a passkey")
 
 # call main
     if __name__ == "__main__":
