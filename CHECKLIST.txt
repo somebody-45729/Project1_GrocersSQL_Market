@@ -1,0 +1,18 @@
+CAN THIS APPLICATION:
+    - Connect to MySQL? YES
+    - Create accounts?
+    - Purchase products?
+    - Able to see history of orders?
+
+ARE THERE AT LEAST 3 TABLES INVOLVED: YES
+
+CRUD ATTRIBUTES:
+    - CREATE?
+    - READ?
+    - UPDATE?
+    - DELETE?
+
+DOES THIS APPLICATION HAVE:
+    - login feature?
+    - user/admin roles?
+    - logging of events (connected with database)

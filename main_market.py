@@ -24,9 +24,3 @@ def main():
     
     logging.basicConfig(filename = "grocerLog.log", level = logging.DEBUG, format='%(asctime)s :: %(message)s')
 
-
-    query = "SELECT * FROM "
-
-    cursor.execute(query)
-
-    connection.close()
