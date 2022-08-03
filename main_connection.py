@@ -42,6 +42,33 @@ def main():
         except ValueError:
             print("Not a valid integer, please try again!")
             logging.info("User has not entered integer, retrying again . . .")
+        
+        if (choice == 1):
+            create(connection, cursor)
+        elif (choice == 2):
+            read(connection, cursor)
+        elif (choice == 3):
+            update(connection, cursor)
+        elif (choice == 4):
+            delete(connection, cursor)
+        else:
+            quit()
 
 
+def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
+    print("\n For TABLE customers")
+    pk = input("Enter customer passkey: ")
+    lastN = input("Enter customer's last name: ")
+    firstN = input("Enter customer's first name: ")
+    addres = input("Enter customer's address: ")
+    cty = input("Enter customer's city: ")
+    # For TABLE customers
+    sql_customers = "INSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
+    val = (pk, lastN, firstN, addres, cty)
+    
+
+
+# call main
+    if __name__ == "__main__":
+        main()
 
