@@ -1,3 +1,4 @@
+'''
 import re
 import logging
 
@@ -19,8 +20,6 @@ def main():
     except Exception as e:
         print("ERROR: Exiting program")
         return
-
-    # Connection works (8/1/22 8:28 PM)
     
     logging.basicConfig(filename = "grocerLog.log", level = logging.DEBUG, format='%(asctime)s :: %(message)s')
 
@@ -173,3 +172,5 @@ def delete(connection, cur):
     if __name__ == "__main__":
         main()
 
+
+'''
