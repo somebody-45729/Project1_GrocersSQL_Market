@@ -56,16 +56,27 @@ def main():
 
 
 def create(connection, cursor): # TECHNICALLY INSERT BY SQL STANDARDS
-    print("\n For TABLE customers")
-    pk = input("Enter customer passkey: ")
-    lastN = input("Enter customer's last name: ")
-    firstN = input("Enter customer's first name: ")
-    addres = input("Enter customer's address: ")
-    cty = input("Enter customer's city: ")
+    print("\n**************************** For TABLE customers *************************")
+    pk = input("\nEnter customer passkey: ")
+    lastN = input("\nEnter customer's last name: ")
+    firstN = input("\nEnter customer's first name: ")
+    addres = input("\nEnter customer's address: ")
+    cty = input("\nEnter customer's city: ")
     # For TABLE customers
-    sql_customers = "INSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
+    sql_customers = "\nINSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
     val = (pk, lastN, firstN, addres, cty)
     
+    print("\n****************** For TABLE orders *********************************")
+    prod = input("\nEnter customer passkey: ")
+    lbs = input("\nEnter customer's last name: ")
+    totPrice = input("\nEnter customer's first name: ")
+    order = input("\nEnter customer's address: ")
+    # For TABLE customers
+    sql_customers = "\nINSERT INTO customers (passkey, lastname, firstname, address, city) VALUES (%s, %s, %s, %s, %s)"
+    val = (pk, lastN, firstN, addres, cty)
+
+
+
 
 
 # call main
