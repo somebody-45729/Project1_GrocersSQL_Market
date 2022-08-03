@@ -14,7 +14,7 @@ def main():
     
     except mysql.connector.Error as mce:
         print(mce.msg)
-        return
+        return connection
     
     except Exception as e:
         print("ERROR: Exiting program")
@@ -24,3 +24,4 @@ def main():
     
     logging.basicConfig(filename = "grocerLog.log", level = logging.DEBUG, format='%(asctime)s :: %(message)s')
 
+    print(connection)
