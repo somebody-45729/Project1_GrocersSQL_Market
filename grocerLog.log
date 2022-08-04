@@ -1,0 +1,9 @@
+2022-08-03 22:51:42,701 :: # _do_auth(): user: root
+2022-08-03 22:51:42,702 :: # _do_auth(): self._auth_plugin: 
+2022-08-03 22:51:42,702 :: # _do_auth(): user: root
+2022-08-03 22:51:42,702 :: # _do_auth(): password: rev519@07A#58B
+2022-08-03 22:51:42,702 :: package: mysql.connector.plugins
+2022-08-03 22:51:42,702 :: plugin_name: caching_sha2_password
+2022-08-03 22:51:42,705 :: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2022-08-03 22:51:42,705 :: new_auth_plugin: caching_sha2_password
+2022-08-03 22:51:42,705 :: Logging into the database, set pre-requisites by config file

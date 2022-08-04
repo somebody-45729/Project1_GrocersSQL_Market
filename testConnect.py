@@ -17,7 +17,6 @@ def insert_customers(conn, cur):
     conn.commit()
     logging.info("Inserted new info into TABLE customers")
 
-
 def insert_orders(conn, cur):
     pro = input("ENTER THE PRODUCE BEING BOUGHT: ")
     lbs = input("ENTER THE NUMBER OF POUNDS OF PRODUCE ORDERED: ")
@@ -28,6 +27,17 @@ def insert_orders(conn, cur):
     cur.execute(sql_orders, val_orders)
     conn.commit()
     logging.info("Inserted new info into TABLE orders")
+
+def insert_history(conn, cur):
+    date = input("PLEASE ENTER THE DATE OF PRODUCT TRANSACTION (in YYYY-MM-DD format please): ")
+    orID = input("ENTER THE ORDER ID OF THIS TRANSACTION: ")
+    pk = input("ENTER PASSKEY OF TRANSACTION FROM CUSTOMER'S ORDER: ")
+    sql_history = "INSERT INTO orders (produce, lbsOrdered, orderid) VALUES (%s, %s, %s)"
+    val_history = (date, orID, pk)
+    print(cur.rowcount, "Record inserted into TABLE orderHistory")
+    cur.execute(sql_history, val_history)
+    conn.commit()
+    logging.info("Inserted new info into TABLE ordersHistory")
 
 
 def main():
