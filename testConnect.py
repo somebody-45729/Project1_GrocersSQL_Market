@@ -49,6 +49,24 @@ def read_customers(cursor):
     for item in fetch:
         print(str(item[0])+"    "+item[1]+"    "+item[2]+"     "+item[3])
 
+def read_orders(cursor):
+    cursor.execute("SELECT * FROM orders")
+    fetch = cursor.fetchall()
+
+    print("produce      lbsOrdered        orderid")
+    print("--------------------------------------")
+    for item in fetch:
+        print(str(item[0])+"    "+item[1]+"    "+item[2])
+
+def read_history(cursor):
+    cursor.execute("SELECT * FROM orderHistory")
+    fetch = cursor.fetchall()
+
+    print("dt      orderid        passkey")
+    print("------------------------------")
+    for item in fetch:
+        print(str(item[0])+"    "+item[1]+"    "+item[2])
+
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
