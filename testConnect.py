@@ -32,7 +32,7 @@ def insert_history(conn, cur):
     date = input("PLEASE ENTER THE DATE OF PRODUCT TRANSACTION (in YYYY-MM-DD format please): ")
     orID = input("ENTER THE ORDER ID OF THIS TRANSACTION: ")
     pk = input("ENTER PASSKEY OF TRANSACTION FROM CUSTOMER'S ORDER: ")
-    sql_history = "INSERT INTO orders (dt, orderid, passkey) VALUES (%s, %s, %s)"
+    sql_history = "INSERT INTO orderHistory (dt, orderid, passkey) VALUES (%s, %s, %s)"
     val_history = (date, orID, pk)
     print(cur.rowcount, "Record inserted into TABLE orderHistory")
     cur.execute(sql_history, val_history)
