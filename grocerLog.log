@@ -63,3 +63,12 @@
 2022-08-04 17:59:45,087 :: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
 2022-08-04 17:59:45,088 :: new_auth_plugin: caching_sha2_password
 2022-08-04 17:59:45,089 :: Logging into the database, set pre-requisites by config file
+2022-08-04 18:02:44,758 :: # _do_auth(): user: root
+2022-08-04 18:02:44,759 :: # _do_auth(): self._auth_plugin: 
+2022-08-04 18:02:44,759 :: # _do_auth(): user: root
+2022-08-04 18:02:44,759 :: # _do_auth(): password: rev519@07A#58B
+2022-08-04 18:02:44,759 :: package: mysql.connector.plugins
+2022-08-04 18:02:44,759 :: plugin_name: caching_sha2_password
+2022-08-04 18:02:44,761 :: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2022-08-04 18:02:44,761 :: new_auth_plugin: caching_sha2_password
+2022-08-04 18:02:44,762 :: Logging into the database, set pre-requisites by config file

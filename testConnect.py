@@ -101,7 +101,7 @@ def update_orders(conn, cur):
     print(cur.rowcount, "UPDATED orders RECORD")
     logging.info("UPDATED orders TABLE")
 
-def update_orders(conn, cur):
+def update_history(conn, cur):
     print("BE SURE TO INSERT MATCHING PASSKEY + ORDER_ID (to work) HERE")
     date = input("ENTER DATE (YYYY-MM-DD FORMAT): ")
     orID = input("ENTER ORDER_ID: ")
