@@ -12,19 +12,22 @@ def insert_customers(conn, cur):
     cty = input("ENTER THE CITY OF CUSTOMER: ")
     sql_customers = "INSERT INTO customers (passkey, lastName, firstName, city) VALUES (%s, %s, %s, %s)"
     val_customers = (pk, lastN, firstN, cty)
-   # cur.execute(sql_customers, val_customers)
     print(cur.rowcount, "Record inserted into TABLE customers")
+    cur.execute(sql_customers, val_customers)
+    conn.commit()
+    logging.info("Inserted new info into TABLE customers")
 
+
+def insert_orders(conn, cur):
     pro = input("ENTER THE PRODUCE BEING BOUGHT: ")
     lbs = input("ENTER THE NUMBER OF POUNDS OF PRODUCE ORDERED: ")
     orID = input("ENTER THE ORDER ID OF THIS TRANSACTION: ")
     sql_orders = "INSERT INTO orders (produce, lbsOrdered, orderid) VALUES (%s, %f, %d)"
     val_orders = (pro, lbs, orID)
-    #cur.execute(sql_orders, val_orders)
     print(cur.rowcount, "Record inserted into TABLE orders")
-
-    cur.execute(sql_customers, val_customers, (sql_orders, val_orders))
+    cur.execute(sql_orders, val_orders)
     conn.commit()
+    logging.info("Inserted new info into TABLE orders")
 
 
 def main():
@@ -62,13 +65,29 @@ def main():
 
         choice = int(input("Enter your choice: "))
         if (choice == 1):
-            insert(conn, cursor)
+            insert_customers(conn, cursor)
         elif (choice == 2):
-            read(cursor)
+            insert_orders(conn, cursor)
         elif (choice == 3):
-            update(conn, cursor)
+            insert_history(conn, cursor)
         elif (choice == 4):
-            delete(conn, cursor)
+            read_customers(cursor)
+        elif (choice == 5):
+            read_orders(cursor)
+        elif (choice == 6):
+            read_history(cursor)
+        elif (choice == 7):
+            update_customers(conn, cursor)
+        elif (choice == 8):
+            update_orders(conn, cursor)
+        elif (choice == 9):
+            update_history(conn, cursor)
+        elif (choice == 10):
+            delete_customers(conn, cursor)
+        elif (choice == 11):
+            delete_orders(conn, cursor)
+        elif (choice == 12):
+            delete_history(conn, cursor)
         else:
             exit()
 
