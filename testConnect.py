@@ -48,19 +48,19 @@ def main():
 
         print("1. INSERT INTO customers")
         print("2. INSERT INTO orders")
-        print("\n3. INSERT INTO orderHistory")
+        print("3. INSERT INTO orderHistory")
 
-        print("4. READ customers")
+        print("\n4. READ customers")
         print("5. READ orders")
-        print("\n6. READ orderHistory")
+        print("6. READ orderHistory")
 
-        print("7. UPDATE customers")
+        print("\n7. UPDATE customers")
         print("8. UPDATE orders")
-        print("\n9. UPDATE orderHistory")
+        print("9. UPDATE orderHistory")
 
-        print("10. DELETE from customers")
+        print("\n10. DELETE from customers")
         print("11. DELETE from customers")
-        print("\n12. DELETE from customers")
+        print("12. DELETE from customers")
 
         print("13. EXIT")
 
