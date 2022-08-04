@@ -23,7 +23,7 @@ def insert(conn, cur):
     #cur.execute(sql_orders, val_orders)
     print(cur.rowcount, "Record inserted into TABLE orders")
 
-    cur.execute(sql_customers, val_customers, sql_orders, val_orders)
+    cur.execute(sql_customers, val_customers, (sql_orders, val_orders))
     conn.commit()
 
 
