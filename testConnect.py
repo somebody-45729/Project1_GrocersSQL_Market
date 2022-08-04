@@ -4,7 +4,7 @@ import logging # need logging of events
 import mysql.connector
 import sql_config as sc
 
-############################ INSERT ###############################################################################################################################
+############################ CREATE (AKA: INSERT) ###############################################################################################################################
 def insert_customers(conn, cur):
     pk = input("ENTER PASSKEY OF CUSTOMER: ")
     lastN = input("ENTER LAST NAME OF CUSTOMER: ")
@@ -38,6 +38,9 @@ def insert_history(conn, cur):
     cur.execute(sql_history, val_history)
     conn.commit()
     logging.info("Inserted new info into TABLE ordersHistory")
+
+############################################# READ (AKA: SELECT, aka show results) ##############################################################################################
+
 
 
 def main():

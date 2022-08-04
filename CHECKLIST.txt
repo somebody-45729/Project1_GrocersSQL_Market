@@ -2,7 +2,7 @@ CAN THIS APPLICATION:
     - Connect to MySQL? --> YES (DEFINITELY)
     - Create accounts? --> YES
     - Purchase products? --> YES(?)
-    - Able to see history of orders?
+    - Able to see history of orders? --> not yet
 
 ARE THERE AT LEAST 3 TABLES INVOLVED: YES
 
@@ -13,6 +13,6 @@ CRUD ATTRIBUTES (NOTE (CRUD - SQL): CREATE - INSERT, READ - SELECT, UPDATE - UPD
     - DELETE?
 
 DOES THIS APPLICATION HAVE:
-    - login feature?
-    - user/admin roles?
+    - login feature? --> implment? (ask about this part)
+    - user/admin roles? --> need to ask
     - logging of events (ex: connecting to db, interacting with files, etc) --> YES (so far)
