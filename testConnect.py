@@ -5,7 +5,7 @@ import mysql.connector
 import sql_config as sc
 
 ############################ INSERT ###############################################################################################################################
-def insert(conn, cur):
+def insert_customers(conn, cur):
     pk = input("ENTER PASSKEY OF CUSTOMER: ")
     lastN = input("ENTER LAST NAME OF CUSTOMER: ")
     firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
@@ -40,13 +40,25 @@ def main():
     cursor = conn.cursor()
     choice = 0
 
-    while (choice <= 4):
+    while (choice <= 12):
 
-        print("1. INSERT")
-        print("2. READ")
-        print("3. UPDATE")
-        print("4. DELETE")
-        print("5. EXIT")
+        print("1. INSERT INTO customers")
+        print("2. INSERT INTO orders")
+        print("\n3. INSERT INTO orderHistory")
+
+        print("4. READ customers")
+        print("5. READ orders")
+        print("\n6. READ orderHistory")
+
+        print("7. UPDATE customers")
+        print("8. UPDATE orders")
+        print("\n9. UPDATE orderHistory")
+
+        print("10. DELETE from customers")
+        print("11. DELETE from customers")
+        print("\n12. DELETE from customers")
+
+        print("13. EXIT")
 
         choice = int(input("Enter your choice: "))
         if (choice == 1):
