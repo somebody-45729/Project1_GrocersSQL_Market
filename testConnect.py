@@ -37,6 +37,4 @@ def main():
             exit()
 
     
-    # call main
-    if __name__ == "__main__":
-        main()
+main()
