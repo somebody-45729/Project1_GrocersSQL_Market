@@ -85,9 +85,34 @@ def update_customers(conn, cur):
 
     cur.execute(sql_customers, val_customers)
     conn.commit()
-    print(cur.rowcount, "UPDATED RECORD")
+    print(cur.rowcount, "UPDATED customers RECORD")
     logging.info("UPDATED customers TABLE")
 
+def update_orders(conn, cur):
+    print("BE SURE TO INSERT MATCHING ORDER_ID (to work) HERE")
+    pro = input("ENTER PRODUCE TYPE: ")
+    lbs = input("ENTER POUNDS OF PRODUCE: ")
+    orID = input("ENTER ORDER_ID OF CUSTOMER: ")
+    sql_orders = "UPDATE customers SET produce= %s, lbsOrdered= %s WHERE orderid = %s"
+    val_orders = (pro, lbs, orID)
+
+    cur.execute(sql_orders, val_orders)
+    conn.commit()
+    print(cur.rowcount, "UPDATED orders RECORD")
+    logging.info("UPDATED orders TABLE")
+
+def update_orders(conn, cur):
+    print("BE SURE TO INSERT MATCHING PASSKEY + ORDER_ID (to work) HERE")
+    date = input("ENTER DATE (YYYY-MM-DD FORMAT): ")
+    orID = input("ENTER ORDER_ID: ")
+    pk = input("ENTER PASSKEY: ")
+    sql_orders = "UPDATE orderHistory SET produce= %s, lbsOrdered= %s WHERE orderid = %s"
+    val_orders = (date, orID, pk)
+
+    cur.execute(sql_orders, val_orders)
+    conn.commit()
+    print(cur.rowcount, "UPDATED orderHistory RECORD")
+    logging.info("UPDATED orderHistory TABLE")
 
 
 
