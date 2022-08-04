@@ -48,6 +48,7 @@ def read_customers(cursor):
     print("-------------------------------------------------")
     for item in fetch:
         print(str(item[0])+"    "+item[1]+"    "+item[2]+"     "+item[3])
+    logging.info("SHOWED ALL AVAILABLE QUERIES WITHIN TABLE customers")
 
 def read_orders(cursor):
     cursor.execute("SELECT * FROM orders")
@@ -57,6 +58,8 @@ def read_orders(cursor):
     print("--------------------------------------")
     for item in fetch:
         print(str(item[0])+"    "+item[1]+"    "+item[2])
+    logging.info("SHOWED ALL AVAILABLE QUERIES WITHIN TABLE orders")
+
 
 def read_history(cursor):
     cursor.execute("SELECT * FROM orderHistory")
@@ -66,7 +69,19 @@ def read_history(cursor):
     print("------------------------------")
     for item in fetch:
         print(str(item[0])+"    "+item[1]+"    "+item[2])
+    logging.info("SHOWED ALL AVAILABLE QUERIES WITHIN TABLE orderHistory")
 
+
+
+################################################ UPDATE QUERIES ################################################################################################################
+def insert_customers(conn, cur):
+    pk = input("ENTER PASSKEY OF CUSTOMER: ")
+    lastN = input("ENTER LAST NAME OF CUSTOMER: ")
+    firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
+    cty = input("ENTER THE CITY OF CUSTOMER: ")
+    sql_customers = "INSERT INTO customers (passkey, lastName, firstName, city) VALUES (%s, %s, %s, %s)"
+    val_customers = (pk, lastN, firstN, cty)
+    print(cur.rowcount, "Record inserted into TABLE customers")
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
