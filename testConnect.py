@@ -74,14 +74,17 @@ def read_history(cursor):
 
 
 ################################################ UPDATE QUERIES ################################################################################################################
-def insert_customers(conn, cur):
+def update_customers(conn, cur):
+    print("BE SURE TO INSERT MATCHING ITEMS HERE")
     pk = input("ENTER PASSKEY OF CUSTOMER: ")
     lastN = input("ENTER LAST NAME OF CUSTOMER: ")
     firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
     cty = input("ENTER THE CITY OF CUSTOMER: ")
-    sql_customers = "INSERT INTO customers (passkey, lastName, firstName, city) VALUES (%s, %s, %s, %s)"
-    val_customers = (pk, lastN, firstN, cty)
-    print(cur.rowcount, "Record inserted into TABLE customers")
+    sql_customers = "UPDATE customers SET passkey='"+pk+"', lastName='"+lastN+"', firstName='"+firstN+"', city='"+cty
+    cur.execute(sql_customers)
+    conn.commit()
+    print(cur.rowcount, "UPDATED RECORD")
+    logging.info("UPDATED customers TABLE")
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
