@@ -75,7 +75,7 @@ def read_history(cursor):
 
 ################################################ UPDATE QUERIES ################################################################################################################
 def update_customers(conn, cur):
-    print("BE SURE TO INSERT MATCHING ITEMS HERE")
+    print("BE SURE TO INSERT MATCHING PASSKEY (to work) HERE")
     pk = input("ENTER PASSKEY OF CUSTOMER: ")
     lastN = input("ENTER LAST NAME OF CUSTOMER: ")
     firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
@@ -87,6 +87,8 @@ def update_customers(conn, cur):
     conn.commit()
     print(cur.rowcount, "UPDATED RECORD")
     logging.info("UPDATED customers TABLE")
+
+
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
