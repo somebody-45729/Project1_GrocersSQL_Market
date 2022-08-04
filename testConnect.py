@@ -47,7 +47,7 @@ def read_customers(cursor):
     print("passkey      lastName        firstName       city")
     print("-------------------------------------------------")
     for item in fetch:
-        print(str(item[0])+" "+item[1]+" "+item[2]+" "+item[3])
+        print(str(item[0])+"    "+item[1]+"    "+item[2]+"     "+item[3])
 
 
 
