@@ -68,7 +68,7 @@ def read_history(cursor):
     print("dt      orderid        passkey")
     print("------------------------------")
     for item in fetch:
-        print((item[0])+"    "+(item[1])+"    "+(item[2]))
+        print(str(item[0])+"    "+str(item[1])+"    "+str(item[2]))
     logging.info("SHOWED ALL AVAILABLE QUERIES WITHIN TABLE orderHistory")
 
 
