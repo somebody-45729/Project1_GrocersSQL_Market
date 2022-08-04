@@ -1,6 +1,6 @@
 CAN THIS APPLICATION:
-    - Connect to MySQL? 
-    - Create accounts?
+    - Connect to MySQL? YES
+    - Create accounts? 
     - Purchase products?
     - Able to see history of orders?
 
