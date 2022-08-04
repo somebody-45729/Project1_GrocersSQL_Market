@@ -80,8 +80,10 @@ def update_customers(conn, cur):
     lastN = input("ENTER LAST NAME OF CUSTOMER: ")
     firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
     cty = input("ENTER THE CITY OF CUSTOMER: ")
-    sql_customers = "UPDATE customers SET lastName='"+lastN+"', firstName='"+firstN+"', city='"+cty+"' WHERE passkey = '"+pk
-    cur.execute(sql_customers)
+    sql_customers = "UPDATE customers SET lastName= %s, firstName= %s, city= %s WHERE passkey = %s"
+    val_customers = (lastN, firstN, cty, pk)
+
+    cur.execute(sql_customers, val_customers)
     conn.commit()
     print(cur.rowcount, "UPDATED RECORD")
     logging.info("UPDATED customers TABLE")
