@@ -12,8 +12,7 @@ def insert(conn, cur):
     cty = input("ENTER THE CITY OF CUSTOMER: ")
     sql_customers = "INSERT INTO customers (passkey, lastName, firstName, city) VALUES (%s, %s, %s, %s)"
     val_customers = (pk, lastN, firstN, cty)
-    cur.execute(sql_customers, val_customers)
-    conn.commit()
+   # cur.execute(sql_customers, val_customers)
     print(cur.rowcount, "Record inserted into TABLE customers")
 
     pro = input("ENTER THE PRODUCE BEING BOUGHT: ")
@@ -21,10 +20,11 @@ def insert(conn, cur):
     orID = input("ENTER THE ORDER ID OF THIS TRANSACTION: ")
     sql_orders = "INSERT INTO orders (produce, lbsOrdered, orderid) VALUES (%s, %f, %d)"
     val_orders = (pro, lbs, orID)
-    cur.execute(sql_orders, val_orders)
-    conn.commit()
+    #cur.execute(sql_orders, val_orders)
     print(cur.rowcount, "Record inserted into TABLE orders")
 
+    cur.execute(sql_customers, val_customers, sql_orders, val_orders)
+    conn.commit()
 
 
 def main():
