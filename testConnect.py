@@ -22,7 +22,7 @@ def insert_orders(conn, cur):
     pro = input("ENTER THE PRODUCE BEING BOUGHT: ")
     lbs = input("ENTER THE NUMBER OF POUNDS OF PRODUCE ORDERED: ")
     orID = input("ENTER THE ORDER ID OF THIS TRANSACTION: ")
-    sql_orders = "INSERT INTO orders (produce, lbsOrdered, orderid) VALUES (%s, %f, %d)"
+    sql_orders = "INSERT INTO orders (produce, lbsOrdered, orderid) VALUES (%s, %s, %s)"
     val_orders = (pro, lbs, orID)
     print(cur.rowcount, "Record inserted into TABLE orders")
     cur.execute(sql_orders, val_orders)
