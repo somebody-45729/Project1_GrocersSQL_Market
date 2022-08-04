@@ -57,7 +57,7 @@ def read_orders(cursor):
     print("produce      lbsOrdered        orderid")
     print("--------------------------------------")
     for item in fetch:
-        print(str(item[0])+"    "+item[1]+"    "+item[2])
+        print(item[0]+"    "+item[1]+"    "+item[2])
     logging.info("SHOWED ALL AVAILABLE QUERIES WITHIN TABLE orders")
 
 
