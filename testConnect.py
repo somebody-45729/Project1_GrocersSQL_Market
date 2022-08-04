@@ -63,7 +63,7 @@ def main():
 
         print("13. EXIT")
 
-        choice = int(input("Enter your choice: "))
+        choice = int(input("Enter your choice from the given numbers 1 - 13: "))
         if (choice == 1):
             insert_customers(conn, cursor)
         elif (choice == 2):
