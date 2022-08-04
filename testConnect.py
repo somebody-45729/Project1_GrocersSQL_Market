@@ -6,25 +6,18 @@ import sql_config as sc
 
 ############################ INSERT ###############################################################################################################################
 def insert(conn, cur):
-    
+    pk = input("ENTER PASSKEY OF CUSTOMER: ")
+    lastN = input("ENTER LAST NAME OF CUSTOMER: ")
+    firstN = input("ENTER FIRST NAME OF CUSTOMER: ")
+    cty = input("ENTER THE CITY OF CUSTOMER: ")
 
+    sql_customers = "INSERT INTO customers (passkey, lastName, firstName, city) VALUES (%s, %s, %s, %s)"
+    val_customers = (pk, lastN, firstN, cty)
+    cur.execute(sql_customers, val_customers)
 
+    conn.commit()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(cur.rowcount, "Record inserted.")
 
 
 
