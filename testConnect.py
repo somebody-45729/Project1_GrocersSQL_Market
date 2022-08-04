@@ -4,6 +4,33 @@ import logging # need logging of events
 import mysql.connector
 import sql_config as sc
 
+############################ INSERT ###############################################################################################################################
+def insert(conn, cur):
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def main():
 
     conn = mysql.connector.connect(
@@ -12,6 +39,7 @@ def main():
         user = sc.user,
         password = sc.password
     )
+    logging.info("Logging into the database, set pre-requisites by config file")
 
     cursor = conn.cursor()
     choice = 0
