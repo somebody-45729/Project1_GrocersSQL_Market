@@ -50,6 +50,8 @@ def read_customers(cursor):
         print(str(item[0])+" "+item[1]+" "+item[2]+" "+item[3])
 
 
+
+############################################# MAIN CONNECTION SECTION ##########################################################################################################
 def main():
     logging.basicConfig(filename="grocerLog.log", level=logging.DEBUG, format='%(asctime)s :: %(message)s')
 
