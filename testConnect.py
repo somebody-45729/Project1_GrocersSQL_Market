@@ -31,6 +31,7 @@ def insert_orders(conn, cur):
 
 
 def main():
+    logging.basicConfig(filename="grocerLog.log", level=logging.DEBUG, format='%(asctime)s :: %(message)s')
 
     conn = mysql.connector.connect(
         host = sc.host,
