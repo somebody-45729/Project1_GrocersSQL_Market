@@ -40,7 +40,14 @@ def insert_history(conn, cur):
     logging.info("Inserted new info into TABLE ordersHistory")
 
 ############################################# READ (AKA: SELECT, aka show results) ##############################################################################################
+def read_customers(cursor):
+    cursor.execute("SELECT * FROM customers")
+    fetch = cursor.fetchall()
 
+    print("passkey      lastName        firstName       city")
+    print("-------------------------------------------------")
+    for item in fetch:
+        print(str(item[0])+" "+item[1]+" "+item[2]+" "+item[3])
 
 
 def main():
