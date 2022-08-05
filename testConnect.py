@@ -125,6 +125,25 @@ def delete_customers(conn, cur):
     print(cur.rowcount, "DELETED RECORD ASSOCIATED WITH PASSKEY")
     logging.info("PASSKEY + ASSOCIATED ROW DELETED")
 
+def delete_orders(conn, cur):
+    orID = input("ENTER THE ORDER_ID TO DELETE: ")
+
+    sql_order = "DELETE FROM orders WHERE passkey = '"+orID+"'"
+    cur.execute(sql_order)
+    conn.commit()
+    print(cur.rowcount, "DELETED RECORD ASSOCIATED WITH ORDER_ID")
+    logging.info("ORDER_ID + ASSOCIATED ROW DELETED")
+
+def delete_history(conn, cur):
+    pk = input("ENTER THE PASSKEY TO DELETE: ")
+    orID = input("ENTER THE ORDER_ID TO DELETE: ")
+
+    sql_history = "DELETE FROM orderHistory WHERE passkey = '"+pk+"' AND orderid = '"+orID+"'"
+    cur.execute(sql_history)
+    conn.commit()
+    print(cur.rowcount, "DELETED RECORD ASSOCIATED WITH PASSKEY AND ORDER_ID")
+    logging.info("PASSKEY AND ORDER_ID + ASSOCIATED ROW DELETED")
+
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
 def main():

@@ -10,7 +10,9 @@ CRUD ATTRIBUTES (NOTE (CRUD - SQL): CREATE - INSERT, READ - SELECT, UPDATE - UPD
     - CREATE? --> YES (ALL 3 TABLES)
     - READ? --> YES
     - UPDATE? --> YES
-    - DELETE?
+    - DELETE? --> YES
+    
+    CRUD ATTRIBUTES COVERED!!!
 
 DOES THIS APPLICATION HAVE:
     - login feature? --> implment? (ask about this part)

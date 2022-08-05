@@ -150,3 +150,13 @@
 2022-08-04 18:34:00,875 :: new_auth_plugin: caching_sha2_password
 2022-08-04 18:34:00,876 :: Logging into the database, set pre-requisites by config file
 2022-08-04 18:34:03,181 :: SHOWED ALL AVAILABLE QUERIES WITHIN TABLE orderHistory
+2022-08-04 20:10:59,725 :: # _do_auth(): user: root
+2022-08-04 20:10:59,725 :: # _do_auth(): self._auth_plugin: 
+2022-08-04 20:10:59,725 :: # _do_auth(): user: root
+2022-08-04 20:10:59,725 :: # _do_auth(): password: rev519@07A#58B
+2022-08-04 20:10:59,725 :: package: mysql.connector.plugins
+2022-08-04 20:10:59,725 :: plugin_name: caching_sha2_password
+2022-08-04 20:10:59,728 :: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2022-08-04 20:10:59,728 :: new_auth_plugin: caching_sha2_password
+2022-08-04 20:10:59,731 :: Logging into the database, set pre-requisites by config file
+2022-08-04 20:11:31,522 :: PASSKEY + ASSOCIATED ROW DELETED
