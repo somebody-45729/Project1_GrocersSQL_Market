@@ -39,6 +39,6 @@ pw = Entry(root)
 pw.place(x=140, y=60)
 pw.config(show="*")
 
-Button(root, text="Login", command=ON, height = 5, width = 25).place(x=30, y=130)
+Button(root, text="Login", command=input, height = 5, width = 25).place(x=30, y=130)
 
 root.mainloop()
