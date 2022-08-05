@@ -2,7 +2,7 @@ CAN THIS APPLICATION:
     - Connect to MySQL? --> YES (DEFINITELY)
     - Create accounts? --> YES
     - Purchase products? --> YES(?)
-    - Able to see history of orders? --> not yet
+    - Able to see history of orders? --> YES
 
 ARE THERE AT LEAST 3 TABLES INVOLVED: YES
 

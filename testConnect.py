@@ -146,7 +146,7 @@ def delete_history(conn, cur):
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
-def main():
+def main(): # Including login
     logging.basicConfig(filename="grocerLog.log", level=logging.DEBUG, format='%(asctime)s :: %(message)s')
 
     conn = mysql.connector.connect(
@@ -158,6 +158,12 @@ def main():
     logging.info("Logging into the database, set pre-requisites by config file")
 
     cursor = conn.cursor()
+
+    # login portion
+
+
+
+
     choice = 0
 
     while (choice <= 12):
@@ -175,8 +181,8 @@ def main():
         print("9. UPDATE orderHistory")
 
         print("\n10. DELETE from customers")
-        print("11. DELETE from customers")
-        print("12. DELETE from customers")
+        print("11. DELETE from orders")
+        print("12. DELETE from orderHistory")
 
         print("13. EXIT")
 
@@ -208,5 +214,5 @@ def main():
         else:
             exit()
 
-    
-main()
+if __name__ == "__main__":    
+    main()
