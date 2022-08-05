@@ -2,8 +2,6 @@ import logging # need logging of events
 
 import mysql.connector
 import sql_config as sc
-import tkinter as tk
-from tkinter import *
 
 ############################ CREATE (AKA: INSERT) ###############################################################################################################################
 def insert_customers(conn, cur):

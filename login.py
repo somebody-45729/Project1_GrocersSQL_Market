@@ -3,10 +3,12 @@ import mysql.connector
 from tkinter import *
 from tkinter import messagebox
 from subprocess import call
+import sql_config as sc
+
 
 
 def input():
-    mysqlDB = mysql.connector.connect(host="localhost", user="root", password="", database="grocermarket")
+    mysqlDB = mysql.connector.connect(host="localhost", user="root", password=sc.password, database="grocermarket")
     cursor = mysqlDB.cursor()
     usename = un.get()
     password = pw.get()
