@@ -151,7 +151,8 @@ def delete_history(conn, cur):
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
-def input(self):
+@staticmethod
+def input():
     mysqlDB = mysql.connector.connect(host="localhost", user="root", password=sc.password, database="grocermarket")
     cursor = mysqlDB.cursor()
     usename = un.get()
