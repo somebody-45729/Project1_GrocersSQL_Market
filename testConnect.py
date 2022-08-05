@@ -9,8 +9,6 @@ from tkinter import *
 from tkinter import messagebox
 from subprocess import call
 
-from login import *
-
 
 ############################ CREATE (AKA: INSERT) ###############################################################################################################################
 def insert_customers(conn, cur):
