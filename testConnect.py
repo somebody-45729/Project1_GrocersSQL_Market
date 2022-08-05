@@ -159,13 +159,8 @@ def main(): # Including login
 
     cursor = conn.cursor()
 
-    # login portion
-
-
-
 
     choice = 0
-
     while (choice <= 12):
 
         print("1. INSERT INTO customers")
@@ -187,6 +182,7 @@ def main(): # Including login
         print("13. EXIT")
 
         choice = int(input("Enter your choice from the given numbers 1 - 13: "))
+
         if (choice == 1):
             insert_customers(conn, cursor)
         elif (choice == 2):
