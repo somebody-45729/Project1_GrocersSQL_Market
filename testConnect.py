@@ -154,7 +154,7 @@ def delete_history(conn, cur):
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
-input() # calling the login function
+# input() # calling the login function
 
 def main(): 
     
