@@ -25,7 +25,7 @@ def input():
 
 root = Tk()
 root.title("Login (test)")
-root.geometry("500x500")
+root.geometry("400x300")
 global un
 global pw
 
