@@ -147,53 +147,8 @@ def delete_history(conn, cur):
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
-def submitInfo():
-    users = username.get()
-    passw = password.get()
-
-    print(f"The name entered by you is {users} {passw}")
-    main(users, passw)
-
-def main(users, passw): 
-    logging.basicConfig(filename="grocerLog.log", level=logging.DEBUG, format='%(asctime)s :: %(message)s')
-
-    if passw:
-        conn = mysql.connector.connect(host = sc.host, database = sc.database, user = users, password = passw)
-        cursor = conn.cursor()
-    userquery = "SELECT * FROM userAdmin"
-    try:
-        cursor.execute(userquery)
-        result = cursor.fetchall()
-
-        for x in result:
-            print(x)
-        print("Query Executed")
-    except:
-        conn.rollback()
-        print("ERROR OCCURED")
-
-    r = tk.Tk()
-    r.geometry("400x400")
-    r.title("MySQL DB Login")
-
-    lb = tk.Label(r, text="USERNAME: ")
-    lb.place(x = 40, y = 20)
-
-    username = tk.Entry(r, width = 35)
-    username.place(x = 150, y = 20, width = 100)
-
-    lb2 = tk.Label(r, text = "Password: ")
-    lb2.place(x = 40, y = 40)
-
-    password = tk.Entry(r, width = 35)
-    password.place(x = 150, y = 40, width = 100)
-
-    btn = tk.Button(r, text = "Login",
-                    bg = 'blue', command = submitInfo)
-    btn.place(x = 150, y = 135, width = 55)
-
-    r.mainloop()
-    '''
+def main(): 
+    
     conn = mysql.connector.connect(
         host = sc.host,
         database = sc.database,
@@ -203,7 +158,6 @@ def main(users, passw):
     logging.info("Logging into the database, set pre-requisites by config file")
 
     cursor = conn.cursor()
-    '''
 
     choice = 0
     while (choice <= 12):
