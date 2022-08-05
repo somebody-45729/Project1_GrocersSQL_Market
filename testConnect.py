@@ -151,7 +151,7 @@ def delete_history(conn, cur):
 
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
-def input():
+def input(self):
     mysqlDB = mysql.connector.connect(host="localhost", user="root", password=sc.password, database="grocermarket")
     cursor = mysqlDB.cursor()
     usename = un.get()
@@ -187,7 +187,7 @@ pw.config(show="*")
 
 Button(root, text="Login", command=input, height = 5, width = 25).place(x=30, y=130)
 
-#root.mainloop()
+root.mainloop()
 
 def main(): 
     
@@ -250,8 +250,6 @@ def main():
             delete_history(conn, cursor)
         else:
             exit()
-
-root.mainloop()
 
 if __name__ == "__main__":    
     main()
