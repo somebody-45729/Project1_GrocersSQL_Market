@@ -115,6 +115,16 @@ def update_history(conn, cur):
     logging.info("UPDATED orderHistory TABLE")
 
 
+###################################################### DELETE QUERIES FROM TABLES #############################################################################################
+def delete_customers(conn, cur):
+    pk = input("ENTER THE PASSKEY TO DELETE: ")
+
+    sql_customer = "DELETE FROM customers WHERE passkey = '"+pk+"'"
+    cur.execute(sql_customer)
+    conn.commit()
+    print(cur.rowcount, "DELETED RECORD ASSOCIATED WITH PASSKEY")
+    logging.info("PASSKEY + ASSOCIATED ROW DELETED")
+
 
 ############################################# MAIN CONNECTION SECTION ##########################################################################################################
 def main():
