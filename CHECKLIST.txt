@@ -12,7 +12,7 @@ CRUD ATTRIBUTES (NOTE (CRUD - SQL): CREATE - INSERT, READ - SELECT, UPDATE - UPD
     - UPDATE? --> YES
     - DELETE? --> YES
     
-    CRUD ATTRIBUTES COVERED!!!
+    CRUD ATTRIBUTES COVERED
 
 DOES THIS APPLICATION HAVE:
     - login feature? --> implment? (ask about this part)
